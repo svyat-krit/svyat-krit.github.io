@@ -1,7 +1,5 @@
 'use strict';
 
-import * as THREE from 'https://threejs.org/build/three.module.js';
-
 let scene = new THREE.Scene();
 
 let camera = new THREE.PerspectiveCamera(

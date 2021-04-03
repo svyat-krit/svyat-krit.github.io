@@ -48,16 +48,43 @@ canvas {
 }
 
 .profile__summary {
-    margin: 0;
+    margin: 0 0 40px 0;
 
     width: 50%;
 
     font-family: monospace;
 }
 
+.profile__email {
+    display: block;
+
+    margin: 0 0 40px 0;
+
+    color: white;
+}
+
+.profile__email:hover {
+    color: grey;
+}
+
 .profile__title,
 .profile__subtitle,
 .profile__summary {
     color: white;
-    /* font-style: italic; */
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.socials__linkedin_link,
+.socials__github_link {
+    color: white;
+}
+
+.socials__linkedin_link:hover,
+.socials__github_link:hover {
+    color: grey;
 }
