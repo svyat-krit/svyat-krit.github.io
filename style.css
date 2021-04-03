@@ -19,8 +19,8 @@ canvas {
 }
 
 .section {
+    width: 100%;
     position: absolute;
-    top: 100px;
 
     display: flex;
     flex-direction: column;
@@ -29,7 +29,8 @@ canvas {
 }
 
 .profile {
-    width: 50%;
+    max-width: 400px;
+    min-width: 300px;
 
     padding: 20px;
 }
@@ -50,8 +51,6 @@ canvas {
 .profile__summary {
     margin: 0 0 40px 0;
 
-    width: 50%;
-
     font-family: monospace;
 }
 
@@ -59,18 +58,6 @@ canvas {
     display: block;
 
     margin: 0 0 40px 0;
-
-    color: white;
-}
-
-.profile__email:hover {
-    color: grey;
-}
-
-.profile__title,
-.profile__subtitle,
-.profile__summary {
-    color: white;
 }
 
 .socials {
@@ -79,11 +66,16 @@ canvas {
     gap: 10px;
 }
 
+.profile__title,
+.profile__subtitle,
+.profile__summary,
+.profile__email,
 .socials__linkedin_link,
 .socials__github_link {
     color: white;
 }
 
+.profile__email:hover,
 .socials__linkedin_link:hover,
 .socials__github_link:hover {
     color: grey;

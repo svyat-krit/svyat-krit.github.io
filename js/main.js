@@ -14,15 +14,17 @@ let renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-let geometry = new THREE.BoxGeometry( 10, 10, 10 );
-let material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+const light = new THREE.HemisphereLight( 0xffffff, 0x080820, 1 );
+light.position.set( 50, 50, 50 );
+scene.add( light );
 
-let cube = new THREE.Mesh( geometry, material );
+const geometry = new THREE.BoxGeometry( 5, 5, 5 );
+const material = new THREE.MeshLambertMaterial({color: 0xffffff, ambient: 0x121212, emissive:0x121212});
+const cube = new THREE.Mesh( geometry, material );
+
 scene.add( cube );
 
 camera.position.z = 25;
-
-console.log(scene);
 
 function render() {
   requestAnimationFrame( render );
@@ -32,3 +34,18 @@ function render() {
 }
 
 render();
+
+function onWindowResize() {
+
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize( window.innerWidth, window.innerHeight );
+
+  renderer.render( scene, camera );
+
+}
+
+window.addEventListener("resize", () => {
+  onWindowResize();
+});
