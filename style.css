@@ -50,6 +50,8 @@ canvas {
 .profile__summary {
     margin: 0;
 
+    width: 50%;
+
     font-family: monospace;
 }
 
