@@ -27,9 +27,9 @@ function init() {
   for (let i = 0; i < 1000; i++) {
     const cube = new THREE.Mesh( geometry, material );
 
-    cube.position.x = Math.random() * 400 * (Math.random() > 0.5 ? 1 : -1);
-    cube.position.y = Math.random() * 400 * (Math.random() > 0.5 ? 1 : -1);
-    cube.position.z = Math.random() * 400 * (Math.random() > 0.5 ? 1 : -1);
+    cube.position.x = Math.random() * 300 * (Math.random() > 0.5 ? 1 : -1);
+    cube.position.y = Math.random() * 300 * (Math.random() > 0.5 ? 1 : -1);
+    cube.position.z = Math.random() * 300 * (Math.random() > 0.5 ? 1 : -1);
     
     cubeArray.push(cube); 
 
@@ -39,17 +39,9 @@ function init() {
   camera.position.y = 5;
   camera.position.z = 15;
 
-  const controls = new THREE.OrbitControls( camera, renderer.domElement );
-
   function render() {
     requestAnimationFrame( render );
 
-    for (let i = 0; i < cubeArray.length; i++) {
-      cubeArray[i].rotation.x += Math.random() / 200;
-      cubeArray[i].rotation.y += 0.001;
-    }
-
-    controls.update();
     renderer.render( scene, camera );
   }
 
