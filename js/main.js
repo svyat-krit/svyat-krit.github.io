@@ -60,8 +60,8 @@ function init() {
   });
   
   window.addEventListener("mousemove", (event) => {
-    scene.position.x = (event.clientX - window.innerWidth / 2) / 10;
-    scene.position.y = (event.clientY - window.innerHeight / 2) / 10;
+    scene.position.x = (event.clientX - window.innerWidth / 2) / 20;
+    scene.position.y = (event.clientY - window.innerHeight / 2) / 20;
   });
 }
 
